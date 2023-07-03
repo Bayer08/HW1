@@ -12,7 +12,7 @@ const Message = (props: MessagePropsType) => {
     return (
         <div id={'hw1-message-' + props.message.id} className={s.message}>
             <div className={s.imageAndText}>
-                <img alt={'123'}
+                <img
                     id={'hw1-avatar-' + props.message.id}
                     // создаёт студент
                     src={props.message.user.avatar}
@@ -40,4 +40,4 @@ const Message = (props: MessagePropsType) => {
     )
 }
 
-export default Message;
+export default Message

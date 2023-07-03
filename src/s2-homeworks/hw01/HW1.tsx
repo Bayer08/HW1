@@ -15,26 +15,25 @@ import avatar from './avatar.png'
 
 // нужно создать правильный тип вместо any
 export type MessageType = {
-    id:number
+    id: number,
     user: {
-        avatar:string,
-        name:string
-    }
+        avatar: string,
+        name: string
+    },
     message: {
-        text:string,
-        time:string
+        text: string
+        time: string
     }
 }
-
 // структуру объекта не менять
 export const message0: MessageType = {
     id: 0,
     user: {
         avatar: "https://sm.ign.com/ign_ap/cover/a/avatar-gen/avatar-generations_hugw.jpg", // можно менять
-        name: 'NameName',  // можно менять
+        name: 'Some Name',  // можно менять
     },
     message: {
-        text: 'some textsome textsome', // можно менять
+        text: 'some textsome textsome textsome', // можно менять
         time: '22:00', // можно менять
     },
 }
@@ -46,7 +45,7 @@ export const friendMessage0: MessageType = {
     },
     message: {
         text: 'зеркальное сообщение для тренировки css', // можно менять
-        time: '22:01', // можно менять
+        time: '22:00', // можно менять
     },
 }
 
@@ -60,6 +59,7 @@ const HW1 = () => {
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
                 </div>
+
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
             </div>

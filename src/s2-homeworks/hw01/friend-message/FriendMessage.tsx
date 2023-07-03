@@ -2,16 +2,17 @@ import React from 'react'
 import s from './FriendMessage.module.css'
 import {MessageType} from "../HW1";
 
-type MessagePropsType = {
-    message: MessageType
+// создать тип вместо any и отобразить приходящие данные
+type PropsTypes ={
+    message:MessageType
 }
 
-// создать тип вместо any и отобразить приходящие данные
-const FriendMessage = (props: MessagePropsType) => {
+const FriendMessage = (props: PropsTypes) => {
     return (
         <div
             id={'hw1-friend-message-' + props.message.id}
-            className={s.friendMessage}>
+            className={s.friendMessage}
+        >
             <div className={s.friendImageAndText}>
                 <img
                     id={'hw1-friend-avatar-' + props.message.id}
@@ -22,14 +23,16 @@ const FriendMessage = (props: MessagePropsType) => {
                 <div className={s.friendText}>
                     <div
                         id={'hw1-friend-name-' + props.message.id}
-                        className={s.friendName}>
+                        className={s.friendName}
+                    >
                         {/*создаёт студент*/}
                         {props.message.user.name}
                         {/**/}
                     </div>
                     <pre
                         id={'hw1-friend-text-' + props.message.id}
-                        className={s.friendMessageText}>
+                        className={s.friendMessageText}
+                    >
                         {/*создаёт студент*/}
                         {props.message.message.text}
                         {/**/}
@@ -38,7 +41,8 @@ const FriendMessage = (props: MessagePropsType) => {
             </div>
             <div
                 id={'hw1-friend-time-' + props.message.id}
-                className={s.friendTime}>
+                className={s.friendTime}
+            >
                 {/*создаёт студент*/}
                 {props.message.message.time}
                 {/**/}
@@ -47,4 +51,4 @@ const FriendMessage = (props: MessagePropsType) => {
     )
 }
 
-export default FriendMessage;
+export default FriendMessage
