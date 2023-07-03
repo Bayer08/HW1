@@ -14,33 +14,33 @@ const FriendMessage = (props: MessagePropsType) => {
             className={s.friendMessage}>
             <div className={s.friendImageAndText}>
                 <img
-                    id={props.message.user.avatar + props.message.id}
+                    id={'hw1-friend-avatar-' + props.message.id}
                     // создаёт студент
-src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQydkZvPz25CIaRZ8tl9kYwBwXUn-AiKJSTZw&usqp=CAU"}
+src={props.message.user.avatar}
                     //
                 />
                 <div className={s.friendText}>
                     <div
-                        id={props.message.user.name + props.message.id}
+                        id={'hw1-friend-name-' + props.message.id}
                         className={s.friendName}>
                         {/*создаёт студент*/}
-Somebody
+                        {props.message.user.name}
                         {/**/}
                     </div>
                     <pre
-                        id={props.message.message.text + props.message.id}
+                        id={'hw1-friend-text-' + props.message.id}
                         className={s.friendMessageText}>
                         {/*создаёт студент*/}
-Who are you?
+                        {props.message.message.text}
                         {/**/}
                     </pre>
                 </div>
             </div>
             <div
-                id={props.message.message.time  + props.message.id}
+                id={'hw1-friend-time-'  + props.message.id}
                 className={s.friendTime}>
                 {/*создаёт студент*/}
-00:01
+                {props.message.message.time}
                 {/**/}
             </div>
         </div>
