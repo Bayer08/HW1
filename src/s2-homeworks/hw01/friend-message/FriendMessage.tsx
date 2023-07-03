@@ -4,7 +4,15 @@ import {MessageType} from "../HW1";
 
 // создать тип вместо any и отобразить приходящие данные
 type PropsTypes ={
-    message:MessageType
+    message: { id: number,
+        user: {
+            avatar: string,
+            name: string
+        },
+        message: {
+            text: string
+            time: string
+        }}
 }
 
 const FriendMessage = (props: PropsTypes) => {
