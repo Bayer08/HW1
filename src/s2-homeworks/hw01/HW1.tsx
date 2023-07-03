@@ -28,7 +28,7 @@ export type MessageType = {
 
 // структуру объекта не менять
 export const message0: MessageType = {
-    id: 1,
+    id: 0,
     user: {
         avatar: "https://sm.ign.com/ign_ap/cover/a/avatar-gen/avatar-generations_hugw.jpg", // можно менять
         name: 'NameName',  // можно менять
@@ -59,9 +59,7 @@ const HW1 = () => {
                 <div>
                     <Message message={message0} />
                     <FriendMessage message={friendMessage0} />
-                    <Message message={message0} />
                 </div>
-
                 {/*для автоматической проверки дз (не менять)*/}
                 <MessageSender M={Message} />
             </div>

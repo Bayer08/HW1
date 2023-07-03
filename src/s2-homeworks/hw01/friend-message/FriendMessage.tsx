@@ -47,4 +47,4 @@ const FriendMessage = (props: MessagePropsType) => {
     )
 }
 
-export default FriendMessage
+export default FriendMessage;
