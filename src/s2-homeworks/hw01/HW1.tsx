@@ -28,7 +28,7 @@ export type MessageType = {
 
 // структуру объекта не менять
 export const message0: MessageType = {
-    id: 0,
+    id: 1,
     user: {
         avatar: "https://sm.ign.com/ign_ap/cover/a/avatar-gen/avatar-generations_hugw.jpg", // можно менять
         name: 'NameName',  // можно менять
@@ -53,7 +53,7 @@ export const friendMessage0: MessageType = {
 const HW1 = () => {
     return (
         <div id={'hw1'}>
-            <div className={s2.hwTitle}>Hometask #1</div>
+            <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
                 <div>
