@@ -1,29 +1,29 @@
-import React, {ChangeEvent, KeyboardEvent} from 'react'
+import React, {ChangeEvent, ChangeEventHandler, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
+    name: string // need to fix any
+    setNameCallback: (e:ChangeEvent<HTMLInputElement>)=>void // need to fix any
+    addUser: ()=>void // need to fix any
     onBlur: any // need to fix any
-    onEnter: any // need to fix any
-    error: any // need to fix any
+    onEnter: (e:KeyboardEvent<HTMLInputElement>)=>void // need to fix any
+    error: string // need to fix any
     totalUsers: any // need to fix any
-    lastUserName?: any // need to fix any
+    lastUserName?: string | boolean // need to fix any
 }
 
 // презентационная компонента (для верстальщика)
-const Greeting: React.FC<GreetingPropsType> = (
-    {
-        name,
-        setNameCallback,
-        addUser,
-        onEnter,
-        onBlur,
-        error,
-        totalUsers,
-        lastUserName,
-    } // деструктуризация пропсов
+const Greeting: React.FC<GreetingPropsType> = (props:GreetingPropsType
+    // {
+    //     name,
+    //     setNameCallback,
+    //     addUser,
+    //     onEnter,
+    //     onBlur,
+    //     error,
+    //     totalUsers,
+    //     lastUserName,
+    // } // деструктуризация пропсов
 ) => {
     const inputClass = s.errorInput // need to fix with (?:)
 
@@ -32,7 +32,7 @@ const Greeting: React.FC<GreetingPropsType> = (
             <div className={s.text}>
                 {'Людей добавили: '}
                 <span id={'hw3-users-total'}>
-                    {totalUsers}
+                    {props.totalUsers}
                 </span>
             </div>
 
@@ -40,30 +40,30 @@ const Greeting: React.FC<GreetingPropsType> = (
                 <div>
                     <input
                         id={'hw3-input'}
-                        value={name}
-                        onChange={setNameCallback}
+                        value={props.name}
+                        onChange={props.setNameCallback}
                         className={inputClass}
-                        onKeyDown={onEnter}
-                        onBlur={onBlur}
+                        onKeyDown={props.onEnter}
+                        onBlur={props.onBlur}
                     />
                     <div id={'hw3-error'} className={s.error}>
-                        {error}
+                        {props.error}
                     </div>
                 </div>
 
                 <button
                     id={'hw3-button'}
-                    onClick={addUser}
+                    onClick={props.addUser}
                     className={s.button}
-                    disabled={!name.trim()}
+                    disabled={!props.name.trim()}
                 >
                     add
                 </button>
             </div>
 
-            {lastUserName && (
+            {props.lastUserName && (
                 <div className={s.greeting}>
-                    Привет <span id={'hw3-last-user'}>{lastUserName}</span>!
+                    Привет <span id={'hw3-last-user'}>{props.lastUserName}</span>!
                 </div>
             )}
         </div>
