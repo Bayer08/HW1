@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { v1 } from 'uuid'
 import s2 from '../../s1-main/App.module.css'
 import GreetingContainer from './GreetingContainer'
-
 /*
 * 1 - описать тип UserType
 * 2 - указать нужный тип в useState с users
